@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-700 text-white p-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <h1 class="text-3xl font-bold">Unified Mentor Blog</h1>
+      <button id="menu-toggle" class="md:hidden block text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav id="navbar" class="mt-4 hidden md:block">
+      <ul class="flex flex-col md:flex-row justify-center md:space-x-6 text-lg font-semibold">
+        <li><a href="#post1" class="hover:underline block py-2 md:py-0">Post One</a></li>
+        <li><a href="#post2" class="hover:underline block py-2 md:py-0">Post Two</a></li>
+        <li><a href="#post3" class="hover:underline block py-2 md:py-0">Post Three</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 space-y-10 px-4">
+    <!-- Blog Post Template -->
+    <article id="post1" class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-2xl font-bold mb-2">How to Start Web Development</h2>
+      <p class="text-sm text-gray-500 mb-4">Published on June 20, 2025</p>
+      <img src="images/post1.jpg" alt="Web Dev" class="rounded-md mb-4 w-full">
+      <p class="mb-6">Web development is the process of building websites. It includes HTML, CSS, JavaScript and more.</p>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Comments</h3>
+        <div id="comments-post1" class="space-y-2 mb-4"></div>
+        <form onsubmit="return addComment('post1')" class="space-y-2">
+          <input id="name-post1" type="text" placeholder="Your Name" required class="w-full border px-3 py-2 rounded" />
+          <textarea id="msg-post1" placeholder="Your Comment" required class="w-full border px-3 py-2 rounded"></textarea>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Post Comment</button>
+        </form>
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article id="post2" class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-2xl font-bold mb-2">Why Learn JavaScript?</h2>
+      <p class="text-sm text-gray-500 mb-4">Published on June 21, 2025</p>
+      <img src="images/post2.jpg" alt="JavaScript" class="rounded-md mb-4 w-full">
+      <p class="mb-6">JavaScript is a powerful scripting language that helps add interactivity to web pages.</p>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Comments</h3>
+        <div id="comments-post2" class="space-y-2 mb-4"></div>
+        <form onsubmit="return addComment('post2')" class="space-y-2">
+          <input id="name-post2" type="text" placeholder="Your Name" required class="w-full border px-3 py-2 rounded" />
+          <textarea id="msg-post2" placeholder="Your Comment" required class="w-full border px-3 py-2 rounded"></textarea>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Post Comment</button>
+        </form>
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article id="post3" class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-2xl font-bold mb-2">Responsive Design Best Practices</h2>
+      <p class="text-sm text-gray-500 mb-4">Published on June 22, 2025</p>
+      <img src="images/post3.jpg" alt="Responsive Design" class="rounded-md mb-4 w-full">
+      <p class="mb-6">Learn how to make your websites mobile-friendly using responsive design techniques.</p>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Comments</h3>
+        <div id="comments-post3" class="space-y-2 mb-4"></div>
+        <form onsubmit="return addComment('post3')" class="space-y-2">
+          <input id="name-post3" type="text" placeholder="Your Name" required class="w-full border px-3 py-2 rounded" />
+          <textarea id="msg-post3" placeholder="Your Comment" required class="w-full border px-3 py-2 rounded"></textarea>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Post Comment</button>
+        </form>
+      </div>
+    </article>
+
+    <!-- New Section with Form -->
+    <section class="bg-white p-6 rounded-xl shadow-md mt-16 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+      <form class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <input type="text" placeholder="Your Name" required class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+        <input type="email" placeholder="Your Email" required class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+        <textarea placeholder="Your Message" required class="md:col-span-2 border border-gray-300 rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+        <button type="submit" class="md:col-span-2 bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-600 mt-16 mb-6">
+    &copy; 2025 Unified Mentor | <a href="mailto:info@unifiedmentor.com" class="text-blue-600 underline">Contact</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
